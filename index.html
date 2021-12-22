@@ -73,9 +73,10 @@
 
 
         #merry {
-            top: 34.3%;
-            left: 55.1%;
-            width: 17.84%;
+            top: 0.3%;
+            left: 11.1%;
+            width: 41.84%;
+            position: absolute;
         }
 
         .gift.invisible:hover {
@@ -131,11 +132,24 @@
             }
         }
 
+
+
+        @media only screen and (max-device-width: 1200px) and (orientation:portrait) {
+            body {
+                transform: rotate(90deg);
+                height: 100vw;
+                margin: 0;
+            }
+        }
+
+
+
         .micro {
             font-size: 8px;
         }
 
         .wish {
+
             font-size: 12px;
             color: black;
         }
@@ -176,7 +190,7 @@
         <img class="gift invisible" id="gift3" src="./images/3-slonce-1.png" />
         <img class="gift invisible" id="gift4" src="./images/4-kot-1.png" />
         <img class="gift invisible" id="gift5" src="./images/5-balwan-1.png" />
-        <img id="merry" src="./images/wesolych-swiat.png">
+        <img class="hidden" id="merry" src="./images/wesolych-swiat.png">
 
 
         <div class="hidden" id="all_found">
@@ -253,6 +267,7 @@
         document.getElementById("all_found_close").addEventListener("click", () =>
         {
             document.getElementById("all_found").classList.add("hidden");
+            document.getElementById("merry").classList.remove("hidden");
 
         });
 
